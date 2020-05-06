@@ -9,10 +9,13 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
+import { AuthHeader, NonAuthHeader } from "./header"
+import { isLoggedIn } from "../auth"
 import "./layout.css"
 
 const Layout = ({ children }) => {
+  const Header = isLoggedIn() ? AuthHeader : NonAuthHeader
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -34,11 +37,6 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
       </div>
     </>
   )
