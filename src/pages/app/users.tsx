@@ -9,7 +9,10 @@ export default function Users() {
 
   return (
     <Layout>
-      <h1>User List</h1>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h1>User List</h1>
+        <Link to="/app">Home</Link>
+      </div>
       <ul>
         {users.map(user => {
           return (

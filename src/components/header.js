@@ -54,7 +54,7 @@ export function AuthHeader({ siteTitle }) {
       >
         <h1 style={{ margin: 0 }}>
           <Link
-            to="/"
+            to="/app"
             style={{
               color: `white`,
               textDecoration: `none`,

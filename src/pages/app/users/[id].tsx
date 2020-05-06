@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 import Layout from "../../../components/layout"
 import users from "../../../users.json"
 import { Redirect } from "@reach/router"
@@ -16,7 +17,10 @@ export default function User(props) {
 
   return (
     <Layout>
-      <h1>User</h1>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <h1>User</h1>
+        <Link to="/app/users">Back to list</Link>
+      </div>
       <hr />
       <h3>Name: {user.first}</h3>
       <h3>id: {user.id}</h3>

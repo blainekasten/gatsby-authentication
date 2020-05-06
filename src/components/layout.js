@@ -7,7 +7,6 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
 import { AuthHeader, NonAuthHeader } from "./header"
 import { isLoggedIn } from "../auth"
@@ -16,19 +15,9 @@ import "./layout.css"
 const Layout = ({ children }) => {
   const Header = isLoggedIn() ? AuthHeader : NonAuthHeader
 
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={isLoggedIn ? "Demo" : "Demo - Authenticated"} />
       <div
         style={{
           margin: `0 auto`,
