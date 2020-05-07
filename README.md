@@ -1,5 +1,8 @@
 # Gatsby client side routing in FS example
 
+- [normal](#this-is-my-normal-title)
+- [weird](#this-is-my-áccentuated-title)
+
 Shows an example of doing crude authentication with file path routing and a basic hook. All user-land implemented, nothing specific to Gatsby.
 
 - /app/\* is effectively auth gated via the `hooks/use-auth-route`
